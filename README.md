@@ -156,7 +156,7 @@ npx hardhat test test/kip7test.ts
 
 If you'd like to run tests or on a network that is a [forked network](https://hardhat.org/hardhat-network/docs/guides/forking-other-networks#forking-from-mainnet)
 
-Set a CYPRESS_ARCHIVE_URL environment variable that connects to the mainnet.
+1. Set a CYPRESS_ARCHIVE_URL environment variable that connects to the mainnet.
 
 ```bash
 CYPRESS_ARCHIVE_URL = "https://klaytn-mainnet-archive.allthatnode.com:8551"
@@ -173,8 +173,26 @@ This is how your `hardhat.config.ts` should look like
 ```
 
 
+```bash
+npx hardhat node
+```
+This pulls the instance of live network(cypress) on your local 
 
+## Test
 
+Tests are located in the **test** directory, and are split between unit tests and staging/testnet tests. Unit tests should only be run on local environments, and staging tests should only run on live environments.
+
+To run unit tests:
+
+```bash
+npx hardhat test
+```
+
+To run tests on baobab network:
+
+```bash
+npx hardhat test test/testfile.ts --network baobab
+```
 
 
 
