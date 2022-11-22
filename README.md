@@ -51,7 +51,7 @@ After installing all the requirements, run the following:
 
 ```bash
   git clone https://github.com/ayo-klaytn/Klaytn-Hardhat-Starter-Kit.git
-  cd Klaytn-Harhdat-Starter-Kit
+  cd Klaytn-Hardhat-Starter-Kit
 ```
 
 Then:
