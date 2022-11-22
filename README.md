@@ -50,8 +50,8 @@ After installing all the requirements, run the following:
 
 
 ```bash
-  git clone githbub/rep
-  cd my-project
+  git clone https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit.git
+  cd Klaytn-Harhdat-Starter-Kit
 ```
 
 Then:
