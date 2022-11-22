@@ -1,10 +1,18 @@
 
 ## Table of Content
-- [Klaytn Hardhat Starter-Kit](#HardhatStarter-Kit)
- - [Getting Started](#GettingStarted)
-      - [Requirement](##Requirement)
-      - [Quickstart](##Quickstart)
-
+- [Klaytn Hardhat Starter-Kit](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#hardhat-starter-kit)
+ - [Getting Started](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#getting-started)
+      - [Requirement](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#requirement)
+      - [Quickstart](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#quickstart)
+- [Usage](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#usage)
+     - [Compiling contracts](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#1-compiling-contracts)
+      - [Deploying contracts](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#2-deploying-contracts)
+     - [Run a Local Network](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#run-a-local-network)
+      - [Using a Testnet or Live Network (Baobab or Cypress)](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#using-a-testnet-or-live-network-baobab-or-cypress)
+     - [Klaytn Baobab Testnet Setup](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#klaytn-baobab-testnet-setup)
+      - [Forking from mainnet](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#forking-from-mainnet)
+      - [Test
+](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#test)
 
 # Hardhat Starter-Kit
 
