@@ -19,7 +19,7 @@
     - [Forking from mainnet](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#forking-from-mainnet)
 
     - [Test](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#test)
-    - [Contributing](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#contributing)
+    - [Contributing](https://github.com/ayo-klaytn/Klaytn-Hardhat-Starter-Kit#contributing-)
 
 # Hardhat Starter-Kit  💼
 
