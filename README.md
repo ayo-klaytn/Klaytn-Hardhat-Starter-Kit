@@ -21,7 +21,7 @@
     - [Test](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#test)
     - [Contributing](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#contributing)
 
-# Hardhat Starter-Kit
+# Hardhat Starter-Kit  💼
 
 This is an implementation of Klaytn token standards using the Hardhat development environment.
 
@@ -29,7 +29,7 @@ This is an implementation of Klaytn token standards using the Hardhat developmen
  - [KIP 17](https://kips.klaytn.foundation/KIPs/kip-17)
  - [KIP 37](https://kips.klaytn.foundation/KIPs/kip-37)
 
-# Getting Started
+# Getting Started 👩‍💻
 
 Primarily, you would learn how to write, deploy, and test smart contract functionalities using Hardhat.
 And also explore other Hardhat features like [Forking from mainnet](https://hardhat.org/hardhat-network/docs/guides/forking-other-networks#forking-from-mainnet), [Impersonating Account](https://hardhat.org/hardhat-network/docs/guides/forking-other-networks#impersonating-accounts) and [Hardhat Set Balance](https://hardhat.org/hardhat-network/docs/reference#hardhat_setbalance)
@@ -37,14 +37,14 @@ And also explore other Hardhat features like [Forking from mainnet](https://hard
 
 Please refer to [Hardhat Getting Started Guide](https://hardhat.org/getting-started/) to learn more.
 
-## Requirement
+## Requirement 🧠
 
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
     - You'll know if git is installed if you can run: ```git --version``` and you see a response like git version x.x.x
 - [Nodejs](https://nodejs.org/en/)
     - You'll know you've installed nodejs right if you can run: ```node --version``` and get an output like: vx.x.x
 
-## Quickstart
+## Quickstart 💫
 
 1. Clone and install dependencies
 
@@ -71,9 +71,9 @@ Then:
 
 To get a list of all commnands, run ```npx hardhat --help```
 
-# Usage 
+# Usage 🔮
 
-## 1. Compiling contracts
+## 1. Compiling contracts ⌛
 
 ```bash
  npx hardhat compile
@@ -81,7 +81,7 @@ To get a list of all commnands, run ```npx hardhat --help```
 
 This compiles the entire project, building all artifacts.
 
-## 2. Deploying contracts 
+## 2. Deploying contracts 🧑‍💻
 
 ```bash
  npx hardhat run
@@ -93,7 +93,7 @@ This runs a user-defined script after compiling the project.
  npx hardhat run scripts/scriptname.ts
 ```
 
-## Run a Local Network
+## Run a Local Network 👨‍💻
 
 ```bash
  npx hardhat node
@@ -101,7 +101,7 @@ This runs a user-defined script after compiling the project.
 
  This Starts a JSON-RPC server on top of Hardhat Network. With this you get you'll get a local blockchain, private keys, and also ether for gas fees. This is one of the best ways to test and interact with smart contracts.
 
- ## Using a Testnet or Live Network (Baobab or Cypress)
+ ## Using a Testnet or Live Network (Baobab or Cypress) ⛰️
 
  In your hardhat.config.ts you'll see section like:
 
@@ -121,7 +121,7 @@ To interact with a live or test network, you'll need:
 
 Let's look at an example of setting these up using the  Klaytn Baobab testnet.
 
-## Klaytn Baobab Testnet Setup
+## Klaytn Baobab Testnet Setup 🌀
 
 First, we will need to set environment variables. We can do so by setting them in our .env file (create it if it's not there / rename to .env if you have .env.example).
 
@@ -167,7 +167,7 @@ To run test:
 npx hardhat test test/kip7test.ts
 ```
 
-## Forking from mainnet
+## Forking from mainnet 👨‍💻
 
 If you'd like to run tests or on a network that is a [forked network](https://hardhat.org/hardhat-network/docs/guides/forking-other-networks#forking-from-mainnet)
 
@@ -193,7 +193,7 @@ npx hardhat node
 ```
 This pulls the instance of live network(cypress) on your local 
 
-## Test
+## Test 👨‍💻
 
 Tests are located in the **test** directory, and are split between unit tests and staging/testnet tests. Unit tests should only be run on local environments, and staging tests should only run on live environments.
 
@@ -208,7 +208,7 @@ To run tests on baobab network:
 ```bash
 npx hardhat test test/testfile.ts --network baobab
 ```
-## Contributing
+## Contributing 📙
 
 Contributions are always welcome! Open a PR or an issue!
 
