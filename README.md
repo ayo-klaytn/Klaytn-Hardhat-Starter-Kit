@@ -1,3 +1,4 @@
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ayo-klaytn/Klaytn-Hardhat-Starter-Kit)
 
 ## Table of Content
 - [Klaytn Hardhat Starter-Kit](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#hardhat-starter-kit)
@@ -123,7 +124,7 @@ Let's look at an example of setting these up using the  Klaytn Baobab testnet.
 
 First, we will need to set environment variables. We can do so by setting them in our .env file (create it if it's not there / rename to .env if you have .env.example).
 
-`IMPORTANT NOTE: PLEASE MAKE SURE YOU'D DON'T EXPOSE THE KEYS YOU PUT IN THIS .env FILE. By that, I mean don't push them to a public repo, and please try to keep the keys you use in development not associated with any real funds.`
+> **IMPORTANT NOTE**: PLEASE MAKE SURE YOU DON'T EXPOSE THE KEYS YOU PUT IN THIS .env FILE. By that, I mean don't push them to a public repo, and please try to keep the keys you use in development not associated with any real funds.
 
 
 
