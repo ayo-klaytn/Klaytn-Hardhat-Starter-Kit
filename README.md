@@ -212,6 +212,8 @@ npx hardhat test test/testfile.ts --network baobab
 
 Contributions are always welcome! Open a PR or an issue!
 
+## Thank you ⚡️ 
+
 
 
 
