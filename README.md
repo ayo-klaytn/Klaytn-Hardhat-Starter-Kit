@@ -19,6 +19,7 @@
     - [Forking from mainnet](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#forking-from-mainnet)
 
     - [Test](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#test)
+    - [Contributing](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#contributing)
 
 # Hardhat Starter-Kit
 
@@ -207,7 +208,9 @@ To run tests on baobab network:
 ```bash
 npx hardhat test test/testfile.ts --network baobab
 ```
+## Contributing
 
+Contributions are always welcome! Open a PR or an issue!
 
 
 
