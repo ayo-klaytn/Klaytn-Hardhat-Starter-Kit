@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@klaytn/contracts": "^1.0.4",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "witnet-solidity-bridge": "^0.6.1"
   }
 }

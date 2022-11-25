@@ -16,6 +16,7 @@ module.exports = {
   networks: {
     baobab: {
       url: process.env.BAOBAB_RPC_URL || "",
+      gasPrice: 250000000000,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },

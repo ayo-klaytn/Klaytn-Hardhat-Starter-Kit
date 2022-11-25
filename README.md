@@ -19,15 +19,23 @@
     - [Forking from mainnet](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#forking-from-mainnet)
 
     - [Test](https://github.com/ayo-klaytn/Klaytn-Harhdat-Starter-Kit#test)
+  
+    - [Using Oracle Contracts]()
+      - [Price Feeds]()
+  
+      - [Randomness]()
+  
     - [Contributing](https://github.com/ayo-klaytn/Klaytn-Hardhat-Starter-Kit#contributing-)
 
 # Hardhat Starter-Kit  💼
 
-This is an implementation of Klaytn token standards using the Hardhat development environment.
+This is an implementation of Klaytn contracts, Price Feeds and Randomness contracts using the Hardhat development environment.
 
  - [KIP 7](https://kips.klaytn.foundation/KIPs/kip-7)
  - [KIP 17](https://kips.klaytn.foundation/KIPs/kip-17)
  - [KIP 37](https://kips.klaytn.foundation/KIPs/kip-37)
+ - [Price Feed]()
+ - [Random Number Generation]()
 
 # Getting Started 👩‍💻
 
@@ -208,6 +216,114 @@ To run tests on baobab network:
 ```bash
 npx hardhat test test/testfile.ts --network baobab
 ```
+
+## Using Oracle Contracts 💥
+ Connecting your smart contract with real-world data has been made easy by means of decentralized oracles. 
+Decentralized oracle services such as **Price Feeds**, **Random Number Oracles** etc are made available through providers such as Witnet, Chainlink, SupraOracles on Klaytn.
+
+### Witnet PriceFeed
+
+The Price Router contract is the easiest and most convenient way to consume Witnet price feeds on Klaytn. To read price values from the Price Router contract, you need first to identify the **WitnetPriceRouter** address specific to Klaytn.
+
+```bash
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.5.0 <0.9.0;
+
+import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceRouter.sol";
+import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceFeed.sol";
+
+contract KlayUsdPriceFeed {
+
+    IWitnetPriceRouter public immutable witnetPriceRouter;
+    IWitnetPriceFeed public klayUsdtPrice;
+    
+    /*
+     * Network: Klaytn Baobab
+     * WitnetPriceRouter: 0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0
+     **/
+    constructor() {
+        witnetPriceRouter = IWitnetPriceRouter(0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0);
+        updateKlayUsdtPriceFeed();
+    }
+
+       /// Detects if the WitnetPriceRouter is now pointing to a different IWitnetPriceFeed implementation:
+    function updateKlayUsdtPriceFeed() public {
+        IERC165 _newPriceFeed = witnetPriceRouter.getPriceFeed(bytes4(0x5d9add33));
+        if (address(_newPriceFeed) != address(0)) {
+            klayUsdtPrice = IWitnetPriceFeed(address(_newPriceFeed));
+        }
+    }
+
+    /// Returns the KlAY / USD price (6 decimals), ultimately provided by the Witnet oracle, and
+    /// the timestamps at which the price was reported back from the Witnet oracles sidechain to Klaytn Baobab. 
+
+     function getKlayUsdtPrice() external view returns (int256 _lastPrice, uint256 _lastTimestamp) {
+        (_lastPrice, _lastTimestamp,,) = klayUsdtPrice.lastValue();
+    }
+    
+}
+```
+
+To get your price feed for Klay/Usdt, run the command below
+
+```bash
+npx hardhat run scripts/witnetPF.ts --network baobab
+```
+
+Please refer to [Witnet price feeds](https://feeds.witnet.io/klaytn) to check the list of data feeds available on Klaytn Cypress and Baobab.
+
+### Witnet Random Oracle
+The WitnetRandomness contract, also known as the "Witnet Randomness Oracle" is the easiest and most convenient way to generate reliable randomness for your smart contracts on Klaytn.
+
+Navigate to [WitnetRandomness Contract Address](https://docs.witnet.io/smart-contracts/witnet-randomness-oracle/contract-addresses#klaytn) for contract address specific to Klaytn.
+
+```bash
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.7.0 <0.9.0;
+
+import "witnet-solidity-bridge/contracts/interfaces/IWitnetRandomness.sol";
+
+contract WitnetRandomness {
+
+    uint32 public randomness;
+    uint256 public latestRandomizingBlock;
+    IWitnetRandomness immutable public witnet;
+    
+    /// @param _witnetRandomness Address of the WitnetRandomness contract.
+    constructor (IWitnetRandomness _witnetRandomness) {
+        assert(address(_witnetRandomness) != address(0));
+        witnet = _witnetRandomness;
+    }
+    
+    receive () external payable {}
+
+    function requestRandomNumber() external payable {
+        latestRandomizingBlock = block.number;
+        uint _usedFunds = witnet.randomize{ value: msg.value }();
+        if (_usedFunds < msg.value) {
+            payable(msg.sender).transfer(msg.value - _usedFunds);
+        }
+    }
+    
+    function fetchRandomNumber() external {
+        assert(latestRandomizingBlock > 0);
+        randomness = witnet.random(type(uint32).max, 0, latestRandomizingBlock);
+    }
+}
+
+```
+
+To get your random number, run this command
+
+```bash
+npx hardhat run scripts/witnetRandomness.ts --network baobab
+```
+
+> Take into account that this example implements an asynchronous workflow — calling fetchRandomNumber() right after requestRandomNumber() will most likely cause the transaction to revert. Please allow 5-10 minutes for the randomization request to complete.
+
+
+
+
 ## Contributing 📙
 
 Contributions are always welcome! Open a PR or an issue!
