@@ -6,7 +6,7 @@ import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceFeed.sol";
 
 contract KlayUsdPriceFeed {
 
-    IWitnetPriceRouter public immutable witnetPriceRouter;
+    IWitnetPriceRouter public  witnetPriceRouter;
     IWitnetPriceFeed public klayUsdtPrice;
     
     /*
